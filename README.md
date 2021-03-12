@@ -16,5 +16,3 @@ Repo link: https://github.com/MuHammadYousry/RDP_Windows2019
 + Press the down arrow on Connect To Your RPD to get IP, User, Password.
 
 **IF MY REPO GOT DELETED,ON YOUR GITHUB GO TO .github/workflows > RDP2019.yml AND EDIT NEW LINK TO YOUR REPO. ALL .BAT in Files FOLDER**
-
-**#Yousry**
