@@ -1,10 +1,10 @@
-# Windows2019RDP-US
+# RDP_Windows2019 👋
 Windows Server 2019 Github with RDP Access (ngrok US) 
 Repo link: https://github.com/aloksharmakumar77/Windows2019RDP-US
 
 Create a free VPS with 2cpu-7gb Ram FREE with Github:
 
-*For Asia go to https://github.com/aloksharmakumar77/Windows2019RDP-AP*
+For Asia go to https://github.com/aloksharmakumar77/Windows2019RDP-AP
 
 + Click Fork in the right corner of the screen to save it to your Github.
 + Visit https://dashboard.ngrok.com to get NGROK_AUTH_TOKEN
@@ -16,4 +16,4 @@ Create a free VPS with 2cpu-7gb Ram FREE with Github:
 + Reload the page and press CI> build
 + Press the down arrow on Connect To Your RPD to get IP, User, Password.
 
-*IF MY REPO GOT DELETED,ON YOUR GITHUB GO TO .github/workflows > RDP-US.yml AND EDIT NEW LINK TO YOUR REPO. ALL .BAT in Files FOLDER* 
+IF MY REPO GOT DELETED,ON YOUR GITHUB GO TO .github/workflows > RDP-US.yml AND EDIT NEW LINK TO YOUR REPO. ALL .BAT in Files FOLDER
