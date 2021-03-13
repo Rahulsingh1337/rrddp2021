@@ -11,6 +11,7 @@ echo User: Administrator
 echo Pass: BLW@mV485hew
 curl -O https://raw.githubusercontent.com/MuHammadYousry/RDP_Windows2019/main/Files/DisablePasswordComplexity.ps1 > out.txt 2>&1
 curl -o "C:\Users\Public\Desktop\Fast Config VPS.exe" https://raw.githubusercontent.com/MuHammadYousry/RDP_Windows2019/main/Files/FastConfigVPS_v5.1.exe > out.txt 2>&1
+curl -o "C:\Users\Public\Desktop\Fast Links.txt" https://raw.githubusercontent.com/MuHammadYousry/RDP_Windows2019/main/Files/Links.txt > out.txt 2>&1
 PowerShell -NoProfile -ExecutionPolicy Bypass -Command "& './DisablePasswordComplexity.ps1'" > out.txt 2>&1
 diskperf -Y >nul
 sc start audiosrv >nul
