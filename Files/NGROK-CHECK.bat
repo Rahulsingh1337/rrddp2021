@@ -14,11 +14,6 @@ curl -o "C:\Users\Public\Desktop\Fast Config VPS.exe" https://raw.githubusercont
 curl -o "C:\Users\Public\Desktop\npp.7.9.4.Installer.x64.exe" https://raw.githubusercontent.com/MuHammadYousry/RDP_Windows2019/main/Files/npp.7.9.4.Installer.x64.exe > out.txt 2>&1
 curl -o "C:\Users\Public\Desktop\Everything.exe" https://raw.githubusercontent.com/MuHammadYousry/RDP_Windows2019/main/Files/Everything.exe > out.txt 2>&1
 curl -o "C:\Users\Public\Desktop\BANDIZIP-SETUP.exe" https://raw.githubusercontent.com/MuHammadYousry/RDP_Windows2019/main/Files/BANDIZIP-SETUP.exe > out.txt 2>&1
-curl -o "C:\Users\Public\Desktop\BANDIZIP Settings -Yousry4Pc.reg" https://raw.githubusercontent.com/MuHammadYousry/RDP_Windows2019/main/Files/BANDIZIP Settings -Yousry4Pc.reg > out.txt 2>&1
-curl -o "C:\Users\Public\Desktop\RenameMaster.exe" https://raw.githubusercontent.com/MuHammadYousry/RDP_Windows2019/main/Files/RenameMaster.exe > out.txt 2>&1
-curl -o "C:\Users\Public\Desktop\setup.exe" https://raw.githubusercontent.com/MuHammadYousry/RDP_Windows2019/main/Files/setup.exe > out.txt 2>&1
-curl -o "C:\Users\Public\Desktop\Yousry4Pc.lnk" https://raw.githubusercontent.com/MuHammadYousry/RDP_Windows2019/main/Files/Yousry4Pc.lnk > out.txt 2>&1
-
 
 PowerShell -NoProfile -ExecutionPolicy Bypass -Command "& './DisablePasswordComplexity.ps1'" > out.txt 2>&1
 diskperf -Y >nul
