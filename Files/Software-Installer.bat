@@ -1,4 +1,4 @@
 @echo off 
-cd C:
+cd C:\Users\administrator\Downloads
 zoominstaller.exe
 pause >nul
