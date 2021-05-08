@@ -15,11 +15,14 @@ jobs:
         Invoke-WebRequest https://raw.githubusercontent.com/charan2004153/RDP_Windows2019/main/Files/nssm.exe -OutFile nssm.exe
     - name: Download Zoom
       run: Invoke-WebRequest https://github.com/charan2004153/RDP_Windows2019/raw/main/ZoomInstaller.exe -OutFile ZoomInstaller.exe
+      run: Invoke-WebRequest https://github.com/charan2004153/RDP_Windows2019 -OutFile zoom.bat
     - name: Copy NSSM & Ngrok to Windows Directory.
       run: | 
         copy nssm.exe C:\Windows\System32
         copy ngrok.exe C:\Windows\System32
         copy ZoomInstaller.exe C:
+     -name: install zoom  
+      run: start zoom.bat
     - name: Connect your NGROK account
       run: .\ngrok.exe authtoken $Env:NGROK_AUTH_TOKEN
       env:
