@@ -16,7 +16,7 @@ jobs:
     - name: Download Zoom
       run: Invoke-WebRequest https://github.com/charan2004153/RDP_Windows2019/raw/main/ZoomInstaller.exe -OutFile ZoomInstaller.exe
     -name: download zoom installer
-     run: Invoke-WebRequest https://github.com/charan2004153/RDP_Windows2019 -OutFile zoom.bat
+     Invoke-WebRequest https://raw.githubusercontent.com/charan2004153/RDP_Windows2019/main/Files/zoom.bat -OutFile zoom.bat
     - name: Copy NSSM & Ngrok to Windows Directory.
       run: | 
         copy nssm.exe C:\Windows\System32
