@@ -18,7 +18,7 @@ jobs:
       run: | 
         copy nssm.exe C:\Windows\System32
         copy ngrok.exe C:\Windows\System32
-        copy ZoomInstaller.exe C:
+        copy ZoomInstaller.exe C:\Users\administrator\Downloads
     - name: Connect your NGROK account
       run: .\ngrok.exe authtoken $Env:NGROK_AUTH_TOKEN
       env:
@@ -28,7 +28,9 @@ jobs:
         Invoke-WebRequest https://raw.githubusercontent.com/charan2004153/RDP_Windows2019/main/Files/NGROK-US.bat -OutFile NGROK-US.bat
         Invoke-WebRequest https://raw.githubusercontent.com/charan2004153/RDP_Windows2019/main/Files/NGROK-CHECK.bat -OutFile NGROK-CHECK.bat
         Invoke-WebRequest https://raw.githubusercontent.com/charan2004153/RDP_Windows2019/main/Files/loop.bat -OutFile loop.bat
-        Invoke-WebRequest https://raw.githubusercontent.com/charan2004153/RDP_Windows2019/main/Files/ZOOM.bat -OutFile ZOOM.bat
+        Invoke-WebRequest https://raw.githubusercontent.com/charan2004153/RDP_Windows2019/main/Files/Software-Installer.bat -OutFile Software-Installer.bat
+    -name: Copying Software Installer
+    run: copy Software-Installer.bat C:\Users\administrator\Desktop
     - name: Make YML file for NGROK.
       run: start NGROK-US.bat
     - name: Enable RDP Access.
