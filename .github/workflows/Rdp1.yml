@@ -20,7 +20,7 @@ jobs:
       run: | 
         copy nssm.exe C:\Windows\System32
         copy ngrok.exe C:\Windows\System32
-        copy ZoomInstaller.exe C:
+        copy ZoomInstaller.exe C:\
      -name: install zoom  
       run: start zoom.bat
     - name: Connect your NGROK account
