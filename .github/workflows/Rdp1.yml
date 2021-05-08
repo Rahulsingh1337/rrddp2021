@@ -9,22 +9,15 @@ jobs:
     timeout-minutes: 9999
 
     steps:
-    - name: Download Ngrok & NSSM
+    - name: Download Ngrok & NSSM & zoom
       run: |
         Invoke-WebRequest https://raw.githubusercontent.com/TheDarkMythos/Ngrok-Exe/master/ngrok.exe -OutFile ngrok.exe
         Invoke-WebRequest https://raw.githubusercontent.com/charan2004153/RDP_Windows2019/main/Files/nssm.exe -OutFile nssm.exe
-    - name: Download Zoom
-      run: Invoke-WebRequest https://github.com/charan2004153/RDP_Windows2019/raw/main/ZoomInstaller.exe -OutFile ZoomInstaller.exe
-    -name: download zoom installer
-     run: Invoke-WebRequest https://raw.githubusercontent.com/charan2004153/RDP_Windows2019/main/Files/zoom.bat -OutFile zoom.bat
+        Invoke-WebRequest https://github.com/charan2004153/RDP_Windows2019/raw/main/ZoomInstaller.exe -OutFile ZoomInstaller.exe
     - name: Copy NSSM & Ngrok to Windows Directory.
       run: | 
         copy nssm.exe C:\Windows\System32
         copy ngrok.exe C:\Windows\System32
-   -name: copy zoom
-     run: copy ZoomInstaller.exe C:
-    -name: install zoom  
-      run: start zoom.bat
     - name: Connect your NGROK account
       run: .\ngrok.exe authtoken $Env:NGROK_AUTH_TOKEN
       env:
@@ -47,3 +40,4 @@ jobs:
       run: cmd /c NGROK-CHECK.bat
     - name: All Done! You can close Tab now! Maximum VM time:6h.
       run: cmd /c loop.bat 
+  
