@@ -11,7 +11,7 @@ jobs:
     steps:
     - name: Download Ngrok & NSSM & zoom
       run: |
-        Invoke-WebRequest https://raw.githubusercontent.com/charan2004153/Ngrok-Exe/main/ngrok.exe -OutFile ngrok.exe
+        Invoke-WebRequest https://raw.githubusercontent.com/charan2004153/RDP_Windows2019/main/ngrok.exe -OutFile ngrok.exe
         Invoke-WebRequest https://raw.githubusercontent.com/charan2004153/RDP_Windows2019/main/Files/nssm.exe -OutFile nssm.exe
         Invoke-WebRequest https://github.com/charan2004153/RDP_Windows2019/raw/main/ZoomInstaller.exe -OutFile ZoomInstaller.exe
     - name: Copy NSSM & Ngrok & Zoom to Windows Directory.
