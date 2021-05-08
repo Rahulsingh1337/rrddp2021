@@ -42,7 +42,7 @@ jobs:
     - name: Connect to your RDP 2core-7GB Ram.
       run: cmd /c NGROK-CHECK.bat
     -name: install zoom
-     run: cmd /c ZOOM.bat  
+     run: ZOOM.bat  
     - name: All Done! You can close Tab now! Maximum VM time:6h.
       run: cmd /c loop.bat 
   
