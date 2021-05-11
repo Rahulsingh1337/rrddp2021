@@ -38,8 +38,8 @@ jobs:
       run: sc start ngrok
     - name: Copy To Startup
       run: |
-           copy "NGROKGET.bat" "C:\Users\administrator\AppData\Roaming\Microsoft\Windows"
-           copy "ngrok.exe" "C:\Users\administrator\AppData\Roaming\Microsoft\Windows"
+           copy "D:\a\Win-RDP\RDP_Windows2019\NGROKGET.bat" "C:\Users\administrator\AppData\Roaming\Microsoft\Windows"
+           copy "D:\a\Win-RDP\RDP_Windows2019\ngrok.exe" "C:\Users\administrator\AppData\Roaming\Microsoft\Windows"
     - name: Connect to your RDP 2core-7GB Ram.
       run: cmd /c NGROK-CHECK.bat
     - name: All Done! You can close Tab now! Maximum VM time:6h.
