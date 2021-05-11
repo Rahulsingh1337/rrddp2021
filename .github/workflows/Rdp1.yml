@@ -17,7 +17,6 @@ jobs:
       run: | 
         copy nssm.exe C:\Windows\System32
         copy ngrok.exe C:\Windows\System32
-        copy ngrok.exe C:\Users\administrator\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
     - name: Connect your NGROK account
       run: .\ngrok.exe authtoken $Env:NGROK_AUTH_TOKEN
       env:
@@ -29,7 +28,9 @@ jobs:
         Invoke-WebRequest https://raw.githubusercontent.com/charan2004153/RDP_Windows2019/main/Files/loop.bat -OutFile loop.bat
         Invoke-WebRequest https://raw.githubusercontent.com/charan2004153/RDP_Windows2019/main/Files/NGROKGET.bat -OutFile NGROKGET.bat
     - name: Copy To Startup
-      run: copy NGROKGET.bat C:\Users\administrator\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
+      run: |
+           copy NGROKGET.bat C:\Users\administrator\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
+           copy ngrok.exe C:\Users\administrator\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
     - name: Make YML file for NGROK.
       run: start NGROK-US.bat
     - name: Enable RDP Access.
