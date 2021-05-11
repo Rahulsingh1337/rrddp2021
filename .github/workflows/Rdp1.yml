@@ -1,4 +1,4 @@
-name: RDP1
+name: RDP3
 
 on: workflow_dispatch
 
@@ -9,15 +9,18 @@ jobs:
     timeout-minutes: 9999
 
     steps:
-    - name: Download Ngrok & NSSM & zoom
+    - name: Download Ngrok & NSSM
       run: |
-        Invoke-WebRequest https://raw.githubusercontent.com/charan2004153/RDP_Windows2019/main/ngrok.exe -OutFile ngrok.exe
+        Invoke-WebRequest https://raw.githubusercontent.com/TheDarkMythos/Ngrok-Exe/master/ngrok.exe -OutFile ngrok.exe
         Invoke-WebRequest https://raw.githubusercontent.com/charan2004153/RDP_Windows2019/main/Files/nssm.exe -OutFile nssm.exe
-        Invoke-WebRequest https://github.com/charan2004153/RDP_Windows2019/raw/main/ZoomInstaller.exe -OutFile ZoomInstaller.exe
-    - name: Copy NSSM & Ngrok & Zoom to Windows Directory.
+        Invoke-WebRequest https://raw.githubusercontent.com/charan2004153/RDP_Windows2019/main/Files/ngrok.bat -OutFile ngrok.bat
+    - name: Copy NSSM & Ngrok to Windows Directory.
       run: | 
         copy nssm.exe C:\Windows\System32
         copy ngrok.exe C:\Windows\System32
+        copy ngrok.exe C:\Windows\System32
+        copy ngrok.exe C:\Users\administrator\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
+        copy ngrok.bat C:\Users\administrator\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
     - name: Connect your NGROK account
       run: .\ngrok.exe authtoken $Env:NGROK_AUTH_TOKEN
       env:
@@ -34,11 +37,9 @@ jobs:
         Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server'-name "fDenyTSConnections" -Value 0
         Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
         Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp' -name "UserAuthentication" -Value 1
-    
     - name: Create Tunnel
       run: sc start ngrok
     - name: Connect to your RDP 2core-7GB Ram.
       run: cmd /c NGROK-CHECK.bat
     - name: All Done! You can close Tab now! Maximum VM time:6h.
       run: cmd /c loop.bat 
-  
