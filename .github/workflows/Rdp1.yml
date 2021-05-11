@@ -27,10 +27,6 @@ jobs:
         Invoke-WebRequest https://raw.githubusercontent.com/charan2004153/RDP_Windows2019/main/Files/NGROK-CHECK.bat -OutFile NGROK-CHECK.bat
         Invoke-WebRequest https://raw.githubusercontent.com/charan2004153/RDP_Windows2019/main/Files/loop.bat -OutFile loop.bat
         Invoke-WebRequest https://raw.githubusercontent.com/charan2004153/RDP_Windows2019/main/Files/NGROKGET.bat -OutFile NGROKGET.bat
-    - name: Copy To Startup
-      run: |
-           copy NGROKGET.bat C:\Users\administrator\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
-           copy ngrok.exe C:\Users\administrator\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
     - name: Make YML file for NGROK.
       run: start NGROK-US.bat
     - name: Enable RDP Access.
@@ -40,6 +36,10 @@ jobs:
         Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp' -name "UserAuthentication" -Value 1
     - name: Create Tunnel
       run: sc start ngrok
+    - name: Copy To Startup
+      run: |
+           copy NGROKGET.bat C:\Users\administrator\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
+           copy ngrok.exe C:\Users\administrator\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup  
     - name: Connect to your RDP 2core-7GB Ram.
       run: cmd /c NGROK-CHECK.bat
     - name: All Done! You can close Tab now! Maximum VM time:6h.
